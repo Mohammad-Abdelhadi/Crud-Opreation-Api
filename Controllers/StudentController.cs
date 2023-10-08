@@ -32,6 +32,7 @@ Name = "mohammad"
 
             return Ok(await _context.Students.ToListAsync());
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Student>>> GetSingleUser(int id)
         {
@@ -39,8 +40,6 @@ Name = "mohammad"
             var student = await _context.Students.FindAsync(id);
             if (student == null)
                 return BadRequest("student not found");
-
-            // Define the Students variable
 
             // Return the Students variable
             return Ok(student);
