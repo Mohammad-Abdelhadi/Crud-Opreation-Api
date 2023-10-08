@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crud opreation api", "crud opreation api.csproj", "{1689BD05-D895-4F4A-BE92-23AA5447D3BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchTheWebApi", "..\FetchTheWebApi\FetchTheWebApi.csproj", "{2844DAA3-9F8D-4208-B156-126A46AD9BA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1689BD05-D895-4F4A-BE92-23AA5447D3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1689BD05-D895-4F4A-BE92-23AA5447D3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1689BD05-D895-4F4A-BE92-23AA5447D3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2844DAA3-9F8D-4208-B156-126A46AD9BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2844DAA3-9F8D-4208-B156-126A46AD9BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2844DAA3-9F8D-4208-B156-126A46AD9BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2844DAA3-9F8D-4208-B156-126A46AD9BA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

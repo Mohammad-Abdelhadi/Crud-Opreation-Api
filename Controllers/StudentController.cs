@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace crud_opreation_api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class StudentController : ControllerBase
     {
@@ -27,13 +27,13 @@ Name = "mohammad"
         }
         [HttpGet]
 
-        public async Task<ActionResult<List<Student>>> Get()
+        public async Task<ActionResult<List<Student>>> GetAllUsers()
         {
 
             return Ok(await _context.Students.ToListAsync());
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<Student>>> Get(int id)
+        public async Task<ActionResult<List<Student>>> GetSingleUser(int id)
         {
             // Use the Where() method to find the student
             var student = await _context.Students.FindAsync(id);
@@ -53,22 +53,21 @@ Name = "mohammad"
             await _context.SaveChangesAsync();
             return Ok(await _context.Students.ToListAsync());
         }
-        [HttpPut]
-        public async Task<ActionResult<List<Student>>> UpdateUser(Student request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<List<Student>>> UpdateUser([FromRoute] int id, Student request)
         {
             // Use the Where() method to find the student
-            var studenttest = await _context.Students.FindAsync(request.Id);
+            var studenttest = await _context.Students.FindAsync(id);
             if (studenttest == null)
                 return BadRequest("student not found");
-            studenttest.Id = request.Id;
+            studenttest.Id = id;
             studenttest.Name = request.Name;
             // Define the Students variable
             await _context.SaveChangesAsync();
             // Return the Students variable
-            return Ok(await _context.Students.ToListAsync()
-        
-);
+            return Ok(await _context.Students.ToListAsync());
         }
+
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<Student>>> DeleteUser(int id)
         {
